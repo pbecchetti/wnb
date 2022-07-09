@@ -14,9 +14,9 @@ export class VolunteerListComponent implements OnInit {
   message: string = "";
   application: Stats;
   discussion: Stats;
-  waiting_assoc: Stats;
-  waiting_manager: Stats;
-  progress: Stats;
+  waiting_association_validation: Stats;
+  waiting_manager_validation: Stats;
+  in_progress: Stats;
 
   constructor(private listService: ListService) {}
 
@@ -30,13 +30,15 @@ export class VolunteerListComponent implements OnInit {
         this.discussion = result.filter(
           (obj) => obj.status === "DISCUSSION"
         )[0];
-        this.waiting_assoc = result.filter(
+        this.waiting_association_validation = result.filter(
           (obj) => obj.status === "WAITING_ASSOCIATION_VALIDATION"
         )[0];
-        this.waiting_manager = result.filter(
+        this.waiting_manager_validation = result.filter(
           (obj) => obj.status === "WAITING_MANAGER_VALIDATION"
         )[0];
-        this.progress = result.filter((obj) => obj.status === "IN_PROGRESS")[0];
+        this.in_progress = result.filter(
+          (obj) => obj.status === "IN_PROGRESS"
+        )[0];
       },
       (err) => {
         switch (err) {

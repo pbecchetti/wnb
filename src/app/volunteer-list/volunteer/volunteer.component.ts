@@ -12,4 +12,11 @@ export class VolunteerComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  getDateDiff(dateBegin: string, dateEnd: string) {
+    let time = new Date(dateEnd).getTime() - new Date(dateBegin).getTime();
+    let h = Math.floor(time / 1000 / 60 / 60);
+    let m = Math.floor((time / 1000 / 60 / 60 - h) * 60);
+    return h + "h" + m;
+  }
 }

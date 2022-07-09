@@ -1,5 +1,5 @@
 <div class="box">
-  <div class="half-wish left-wish">
+  <div class="left-wish">
     <div class="left-volunteer">
       <div class="avatar">
         <img src="/assets/img/1.png" alt="" />
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="half-wish right-wish">
+  <div class="right-wish">
     <div class="status">
       <div class="status-title">Statut:</div>
       <div class="status-btn">
@@ -35,6 +35,42 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="description">
+      <ng-container *ngIf="wish.status === 'APPLICATION'">
+        Ce volontaire souhaite participer à votre mission. Envoyez lui un
+        message pour lui expliquer la mission et vos disponibilités pour un
+        premier échange.
+      </ng-container>
+      <ng-container *ngIf="wish.status === 'WAITING_MANAGER_VALIDATION'">
+        La mission se déroulera sur le temps de travail du volontaire, l’accord
+        du manager est requis. En attendant sa validation, n’hésitez pas à
+        donner toutes les informations de la mission au volontaire
+      </ng-container>
+      <ng-container *ngIf="wish.status === 'CANCELLED'">
+        Vous avez refusé l'inscription de ce volontaire le
+        {{ wish.entries[0].dateBegin | date: "d/M/yy" }} à
+        {{ wish.entries[0].dateBegin | date: "hh:mm" }}.
+      </ng-container>
+      <ng-container *ngIf="wish.status === 'DISCUSSION'">
+        texte non défini dans le mockup
+      </ng-container>
+
+      <ng-container
+        *ngIf="
+          wish.status === 'WAITING_ASSOCIATION_VALIDATION' ||
+          wish.status === 'IN_PROGRESS' ||
+          wish.status === 'USER_HAS_PARTICIPATED'
+        "
+      >
+        <div class="dates-entry" *ngFor="let entry of wish.entries">
+          Le {{ entry.dateBegin | date: "d/M/yy" }}, de
+          {{ entry.dateBegin | date: "hh:mm" }} à
+          {{ entry.dateEnd | date: "hh:mm" }} ({{
+            getDateDiff(entry.dateBegin, entry.dateEnd)
+          }})
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

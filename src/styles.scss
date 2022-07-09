@@ -29,14 +29,20 @@ body {
 #discussion {
   background-color: var(--discussion-color);
 }
-#waiting_assoc {
+#waiting_association_validation {
   background-color: var(--waiting-assoc-color);
 }
-#waiting_manager {
+#waiting_manager_validation {
   background-color: var(--waiting-manager-color);
 }
-#progress {
+#in_progress {
   background-color: var(--progress-color);
+}
+#user_has_participated {
+  background-color: var(--user-participated-color);
+}
+#cancelled {
+  background-color: var(--cancelled-color);
 }
 .circle {
   height: 20px;

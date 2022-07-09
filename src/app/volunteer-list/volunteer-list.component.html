@@ -31,30 +31,30 @@
       <div class="count">{{ discussion.count }}</div>
     </div>
 
-    <div class="status-btn" *ngIf="waiting_assoc?.count > 0">
+    <div class="status-btn" *ngIf="waiting_association_validation?.count > 0">
       <div>
-        <div class="circle" id="waiting_assoc">
+        <div class="circle" id="waiting_association_validation">
           <div class="status-txt">Date à valider</div>
         </div>
       </div>
-      <div class="count">{{ waiting_assoc.count }}</div>
+      <div class="count">{{ waiting_association_validation.count }}</div>
     </div>
-    <div class="status-btn" *ngIf="waiting_manager?.count > 0">
+    <div class="status-btn" *ngIf="waiting_manager_validation?.count > 0">
       <div>
-        <div class="circle" id="waiting_manager">
+        <div class="circle" id="waiting_manager_validation">
           <div class="status-txt">En attente du manager</div>
         </div>
       </div>
-      <div class="count">{{ waiting_manager.count }}</div>
+      <div class="count">{{ waiting_manager_validation.count }}</div>
     </div>
 
-    <div class="status-btn" *ngIf="progress?.count > 0">
+    <div class="status-btn" *ngIf="in_progress?.count > 0">
       <div>
-        <div class="circle" id="progress">
+        <div class="circle" id="in_progress">
           <div class="status-txt">En cours</div>
         </div>
       </div>
-      <div class="count">{{ progress.count }}</div>
+      <div class="count">{{ in_progress.count }}</div>
     </div>
   </div>
   <div class="list-title">La liste de vos volontaires</div>
