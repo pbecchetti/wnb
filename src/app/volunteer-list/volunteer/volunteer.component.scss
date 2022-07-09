@@ -39,7 +39,9 @@
 
 .mission-txt {
   font-size: 14px;
-  padding-bottom: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
 }
 .company-name {
   color: var(unnamed-color-404040);
@@ -82,4 +84,9 @@
 }
 .dates-entry:last-child {
   border-bottom: none;
+}
+.icon {
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
 }

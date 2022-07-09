@@ -6,10 +6,17 @@
     url(./assets/fonts/HarmoniaSans/HarmoniaSansProCyr-Regular.ttf)
       format("truetype");
 }
-
+body {
+  background: linear-gradient(
+    175deg,
+    var(--yellow-dark-color),
+    var(--yellow-light-color) 15%,
+    var(--unnamed-color-fafafa) 15%,
+    var(--unnamed-color-fafafa)
+  );
+}
 html,
 body {
-  background-color: var(--unnamed-color-fafafa);
   padding: 40px;
   color: var(--unnamed-color-0c0c0c);
   font-family: "HarmoniaSans", Arial, Helvetica, sans-serif;
@@ -21,6 +28,9 @@ body {
 }
 .global-subtitle {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
 #application {

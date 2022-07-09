@@ -2,26 +2,35 @@
   <div class="left-wish">
     <div class="left-volunteer">
       <div class="avatar">
-        <img src="/assets/img/1.png" alt="" />
+        <img src="/assets/img/{{ wish?.id }}.png" alt="avatar" />
       </div>
-      <div class="id">{{ wish.id }}</div>
+      <div class="id">{{ wish?.id }}</div>
       <div class="subs">
-        Inscrit le: {{ wish.createdDate | date: "d MMMM y" }}
+        Inscrit le: {{ wish?.createdDate | date: "d MMMM y" }}
       </div>
     </div>
     <div class="right-volunteer">
       <div class="volunteer-name">
-        {{ wish.volunteerProfile.firstname }}
-        {{ wish.volunteerProfile.lastname }}
+        {{ wish?.volunteerProfile.firstname }}
+        {{ wish?.volunteerProfile.lastname }}
       </div>
       <div class="mission-txt company-name">
-        {{ wish.volunteerProfile.company.name }}
+        {{ wish?.volunteerProfile.company.name }}
       </div>
-      <div class="mission-txt">{{ wish.initiative.title }}</div>
-      <div class="mission-txt">{{ wish.initiative.city }}</div>
       <div class="mission-txt">
-        {{ wish.coordinatorProfile.firstname }}
-        {{ wish.coordinatorProfile.lastname }}
+        <img class="icon" src="/assets/icons/point.png" alt="point" />{{
+          wish?.initiative.title
+        }}
+      </div>
+      <div class="mission-txt">
+        <img class="icon" src="/assets/icons/pin.png" alt="pin" />{{
+          wish?.initiative.city
+        }}
+      </div>
+      <div class="mission-txt">
+        <img class="icon" src="/assets/icons/user.png" alt="user" />
+        {{ wish?.coordinatorProfile.firstname }}
+        {{ wish?.coordinatorProfile.lastname }}
       </div>
     </div>
   </div>
@@ -30,40 +39,40 @@
       <div class="status-title">Statut:</div>
       <div class="status-btn">
         <div>
-          <div class="circle" [id]="wish.status.toLowerCase()">
-            <div class="status-txt">{{ wish.status.toLowerCase() }}</div>
+          <div class="circle" [id]="wish?.status.toLowerCase()">
+            <div class="status-txt">{{ wish?.status.toLowerCase() }}</div>
           </div>
         </div>
       </div>
     </div>
     <div class="description">
-      <ng-container *ngIf="wish.status === 'APPLICATION'">
+      <ng-container *ngIf="wish?.status === 'APPLICATION'">
         Ce volontaire souhaite participer à votre mission. Envoyez lui un
         message pour lui expliquer la mission et vos disponibilités pour un
         premier échange.
       </ng-container>
-      <ng-container *ngIf="wish.status === 'WAITING_MANAGER_VALIDATION'">
+      <ng-container *ngIf="wish?.status === 'WAITING_MANAGER_VALIDATION'">
         La mission se déroulera sur le temps de travail du volontaire, l’accord
         du manager est requis. En attendant sa validation, n’hésitez pas à
         donner toutes les informations de la mission au volontaire
       </ng-container>
-      <ng-container *ngIf="wish.status === 'CANCELLED'">
+      <ng-container *ngIf="wish?.status === 'CANCELLED'">
         Vous avez refusé l'inscription de ce volontaire le
         {{ wish.entries[0].dateBegin | date: "d/M/yy" }} à
         {{ wish.entries[0].dateBegin | date: "hh:mm" }}.
       </ng-container>
-      <ng-container *ngIf="wish.status === 'DISCUSSION'">
+      <ng-container *ngIf="wish?.status === 'DISCUSSION'">
         texte non défini dans le mockup
       </ng-container>
 
       <ng-container
         *ngIf="
-          wish.status === 'WAITING_ASSOCIATION_VALIDATION' ||
-          wish.status === 'IN_PROGRESS' ||
-          wish.status === 'USER_HAS_PARTICIPATED'
+          wish?.status === 'WAITING_ASSOCIATION_VALIDATION' ||
+          wish?.status === 'IN_PROGRESS' ||
+          wish?.status === 'USER_HAS_PARTICIPATED'
         "
       >
-        <div class="dates-entry" *ngFor="let entry of wish.entries">
+        <div class="dates-entry" *ngFor="let entry of wish?.entries">
           Le {{ entry.dateBegin | date: "d/M/yy" }}, de
           {{ entry.dateBegin | date: "hh:mm" }} à
           {{ entry.dateEnd | date: "hh:mm" }} ({{

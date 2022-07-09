@@ -68,4 +68,22 @@ export class VolunteerListComponent implements OnInit {
       }
     );
   }
+
+  getWishByFilter(status: string) {
+    this.listService.getWishByFilter(status).subscribe(
+      (result) => {
+        this.wishes = result;
+      },
+      (err) => {
+        switch (err) {
+          case 404:
+            this.message =
+              "Something is wrong, please check your API address, the parameters of the query and their formats or contact us";
+            break;
+          default:
+            this.message = "something is wrong, please contact us";
+        }
+      }
+    );
+  }
 }

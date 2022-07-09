@@ -24,11 +24,11 @@ export class ListService {
   }
 
   // Filter wishes
-  // getStats(): Observable<any> {
-  //   return this.http
-  //     .get(this.baseAPI + this.statsURL)
-  //     .pipe(retry(1), catchError(this.handleError));
-  // }
+  getWishByFilter(status: string): Observable<any> {
+    return this.http
+      .get(this.baseAPI + this.wishesURL + "?status=" + status)
+      .pipe(retry(1), catchError(this.handleError));
+  }
 
   // Get all wishes
   getWishes(): Observable<any> {
