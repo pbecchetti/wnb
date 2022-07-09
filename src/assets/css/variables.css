@@ -6,4 +6,9 @@
   --unnamed-color-fafafa: #fafafa;
   --unnamed-color-0c0c0c: #0c0c0c;
   --unnamed-color-ffffff: #ffffff;
+  --application-color: #ff000080;
+  --discussion-color: #ff0000;
+  --waiting-assoc-color: #ffc000;
+  --waiting-manager-color: #ffc00080;
+  --progress-color: #92d050;
 }

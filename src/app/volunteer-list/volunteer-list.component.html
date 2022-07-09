@@ -4,12 +4,59 @@
 </div>
 <div class="list">
   <div class="list-now">En ce moment</div>
-  <div class="nb-inscription">25 inscriptions</div>
+  <div class="nb-inscription">
+    <span style="font-size: 40px">{{ numberWishes }}</span> inscriptions
+  </div>
   <div class="bar">bar TODO</div>
+
   <div class="list-subtitle">
     Suivez les inscriptions en fonction de leur statut :
   </div>
-  TODO buttons
+  <div class="buttons">
+    <div class="status-btn" *ngIf="application.count > 0">
+      <div>
+        <div class="circle" id="application">
+          <div class="status">Candidature</div>
+        </div>
+      </div>
+      <div class="count">{{ application.count }}</div>
+    </div>
+
+    <div class="status-btn" *ngIf="discussion.count > 0">
+      <div>
+        <div class="circle" id="discussion">
+          <div class="status">Echange</div>
+        </div>
+      </div>
+      <div class="count">{{ discussion.count }}</div>
+    </div>
+
+    <div class="status-btn" *ngIf="waiting_assoc.count > 0">
+      <div>
+        <div class="circle" id="waiting_assoc">
+          <div class="status">Date à valider</div>
+        </div>
+      </div>
+      <div class="count">{{ waiting_assoc.count }}</div>
+    </div>
+    <div class="status-btn" *ngIf="waiting_manager.count > 0">
+      <div>
+        <div class="circle" id="waiting_manager">
+          <div class="status">En attente du manager</div>
+        </div>
+      </div>
+      <div class="count">{{ waiting_manager.count }}</div>
+    </div>
+
+    <div class="status-btn" *ngIf="progress.count > 0">
+      <div>
+        <div class="circle" id="progress">
+          <div class="status">En cours</div>
+        </div>
+      </div>
+      <div class="count">{{ progress.count }}</div>
+    </div>
+  </div>
   <div class="list-title">La liste de vos volontaires</div>
   todo foreach:
   <app-volunteer></app-volunteer>
