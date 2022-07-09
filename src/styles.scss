@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/css/variables.css";
+
+html,
+body {
+  background-color: var(--unnamed-color-fafafa);
+  padding: 40px;
+  color: var(--unnamed-color-0c0c0c);
+}
+
+.global-title {
+  font-size: 36px;
+  padding-bottom: 40px;
+}
+.global-subtitle {
+  font-size: 18px;
+}
