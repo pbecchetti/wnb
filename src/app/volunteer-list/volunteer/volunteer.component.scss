@@ -1,0 +1,70 @@
+.box {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 30px;
+  margin: 30px 0;
+  display: flex;
+}
+.half-wish {
+  display: flex;
+}
+.left-wish {
+  width: 40%;
+  border-right: 1px solid var(--unnamed-color-d8d8d8);
+}
+.left-volunteer {
+  width: 200px;
+  text-align: center;
+  padding: 20px 0;
+}
+.right-volunteer {
+  padding: 30px 0;
+}
+.id {
+  font-size: 16px;
+  color: var(--unnamed-color-404040);
+  padding: 10px 0;
+}
+.subs {
+  font-size: 14px;
+  color: var(--unnamed-color-8c8c8c);
+}
+.avatar {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+.volunteer-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mission-txt {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.company-name {
+  color: var(unnamed-color-404040);
+  padding-bottom: 15px;
+}
+.right-wish {
+  padding: 20px 40px;
+}
+.status {
+  display: flex;
+  height: 30px;
+}
+.status-title {
+  margin-top: 7px;
+}
+.status-btn {
+  width: 160px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border: 1px solid var(--unnamed-color-d8d8d8);
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 40px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 7px 7px;
+  margin-left: 20px;
+}

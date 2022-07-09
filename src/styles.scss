@@ -22,3 +22,31 @@ body {
 .global-subtitle {
   font-size: 18px;
 }
+
+#application {
+  background-color: var(--application-color);
+}
+#discussion {
+  background-color: var(--discussion-color);
+}
+#waiting_assoc {
+  background-color: var(--waiting-assoc-color);
+}
+#waiting_manager {
+  background-color: var(--waiting-manager-color);
+}
+#progress {
+  background-color: var(--progress-color);
+}
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status-txt {
+  margin-left: 30px;
+  font-size: 12px;
+  width: 110px;
+  margin-top: 3px;
+}

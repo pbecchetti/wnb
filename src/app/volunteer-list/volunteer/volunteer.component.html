@@ -1,1 +1,40 @@
-<p>volunteer works!</p>
+<div class="box">
+  <div class="half-wish left-wish">
+    <div class="left-volunteer">
+      <div class="avatar">
+        <img src="/assets/img/1.png" alt="" />
+      </div>
+      <div class="id">{{ wish.id }}</div>
+      <div class="subs">
+        Inscrit le: {{ wish.createdDate | date: "d MMMM y" }}
+      </div>
+    </div>
+    <div class="right-volunteer">
+      <div class="volunteer-name">
+        {{ wish.volunteerProfile.firstname }}
+        {{ wish.volunteerProfile.lastname }}
+      </div>
+      <div class="mission-txt company-name">
+        {{ wish.volunteerProfile.company.name }}
+      </div>
+      <div class="mission-txt">{{ wish.initiative.title }}</div>
+      <div class="mission-txt">{{ wish.initiative.city }}</div>
+      <div class="mission-txt">
+        {{ wish.coordinatorProfile.firstname }}
+        {{ wish.coordinatorProfile.lastname }}
+      </div>
+    </div>
+  </div>
+  <div class="half-wish right-wish">
+    <div class="status">
+      <div class="status-title">Statut:</div>
+      <div class="status-btn">
+        <div>
+          <div class="circle" [id]="wish.status.toLowerCase()">
+            <div class="status-txt">{{ wish.status.toLowerCase() }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ import { ListService } from "../services/list.service";
   styleUrls: ["./volunteer-list.component.scss"],
 })
 export class VolunteerListComponent implements OnInit {
-  // stats: any[] = [];
+  wishes: any[] = [];
   numberWishes: number = 0;
   message: string = "";
   application: Stats;
@@ -23,9 +23,7 @@ export class VolunteerListComponent implements OnInit {
   ngOnInit(): void {
     this.listService.getStats().subscribe(
       (result) => {
-        console.log(result);
         this.numberWishes = result.reduce((total, obj) => obj.count + total, 0);
-        // this.stats = result;
         this.application = result.filter(
           (obj) => obj.status === "APPLICATION"
         )[0];
@@ -39,27 +37,28 @@ export class VolunteerListComponent implements OnInit {
           (obj) => obj.status === "WAITING_MANAGER_VALIDATION"
         )[0];
         this.progress = result.filter((obj) => obj.status === "IN_PROGRESS")[0];
-        // this.numberTrips = resultTrips.search_info.count;
-        // this.trips = resultTrips.trips;
-        // this.trips.forEach((trip) => {
-        //   this.searchService
-        //     .getTrip(trip.link.split('id=')[1])
-        //     .subscribe((resultTrip) => {
-        //       trip.depart = resultTrip.departure_place.address;
-        //       trip.arrival = resultTrip.arrival_place.address;
-        //       trip.seatLefts = resultTrip.seats_left;
-        //     });
-        // });
       },
       (err) => {
         switch (err) {
-          case 400:
-            this.message =
-              "Something is wrong, please check the parameters of the query and their formats or contact us";
-            break;
           case 404:
             this.message =
-              "Something is wrong, please check your API address or contact us";
+              "Something is wrong, please check your API address, the parameters of the query and their formats or contact us";
+            break;
+          default:
+            this.message = "something is wrong, please contact us";
+        }
+      }
+    );
+
+    this.listService.getWishes().subscribe(
+      (result) => {
+        this.wishes = result;
+      },
+      (err) => {
+        switch (err) {
+          case 404:
+            this.message =
+              "Something is wrong, please check your API address, the parameters of the query and their formats or contact us";
             break;
           default:
             this.message = "something is wrong, please contact us";

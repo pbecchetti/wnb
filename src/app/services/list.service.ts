@@ -9,8 +9,6 @@ import { environment } from "src/environments/environment";
   providedIn: "root",
 })
 export class ListService {
-  // today = new Date().toISOString();
-
   // API urls
   private baseAPI = "https://6143a763c5b553001717d062.mockapi.io/api";
   private statsURL = "/stats";
@@ -25,19 +23,19 @@ export class ListService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  // Get list of trips
-  // getList(): Observable<any> {
+  // Filter wishes
+  // getStats(): Observable<any> {
   //   return this.http
-  //     .get(this.baseAPI + this.getTripsURL)
+  //     .get(this.baseAPI + this.statsURL)
   //     .pipe(retry(1), catchError(this.handleError));
   // }
 
-  // // Get info about one particular trip (with trip ID as a parameter)
-  // getTrip(tripID: string): Observable<any> {
-  //   return this.http
-  //     .get(this.baseAPI + this.tripURL + '/' + tripID + '?key=' + this.APIKEY)
-  //     .pipe(retry(1), catchError(this.handleError));
-  // }
+  // Get all wishes
+  getWishes(): Observable<any> {
+    return this.http
+      .get(this.baseAPI + this.wishesURL)
+      .pipe(retry(1), catchError(this.handleError));
+  }
 
   // Error handling
   handleError(error: any) {
