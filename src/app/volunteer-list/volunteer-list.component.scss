@@ -3,6 +3,9 @@
   border-radius: 25px;
   padding: 20px;
 }
+.list-title {
+  padding-top: 40px;
+}
 .nb-inscription {
   font-weight: 600;
   font-size: 24px;
@@ -18,7 +21,10 @@
 }
 .buttons {
   display: flex;
+  flex-wrap: wrap;
+  width: 700px;
 }
+
 .status-btn {
   width: 160px;
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
@@ -110,7 +116,7 @@
   visibility: visible;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   .buttons {
     display: block;
   }
