@@ -13,6 +13,7 @@ export class VolunteerComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Get the time in hours + minutes between starting and ending time
   getDateDiff(dateBegin: string, dateEnd: string) {
     let time = new Date(dateEnd).getTime() - new Date(dateBegin).getTime();
     let h = Math.floor(time / 1000 / 60 / 60);

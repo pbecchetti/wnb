@@ -2,6 +2,7 @@
   <div class="left-wish">
     <div class="left-volunteer">
       <div class="avatar">
+        <!-- link the avatar to the wish ID since there is no user ID yet, or anything else -->
         <img
           src="/assets/img/{{ wish?.id }}.png"
           alt="avatar"
@@ -60,11 +61,13 @@
         du manager est requis. En attendant sa validation, n’hésitez pas à
         donner toutes les informations de la mission au volontaire
       </ng-container>
+      <!-- text for this case depending of it's a deny from the manager or else is not described yet so I went with the manager refusal -->
       <ng-container *ngIf="wish?.status === 'CANCELLED'">
         Vous avez refusé l'inscription de ce volontaire le
         {{ wish.entries[0].dateBegin | date: "d/M/yy" }} à
         {{ wish.entries[0].dateBegin | date: "hh:mm" }}.
       </ng-container>
+      <!-- text for this case is not described yet -->
       <ng-container *ngIf="wish?.status === 'DISCUSSION'">
         texte non défini dans le mockup
       </ng-container>
