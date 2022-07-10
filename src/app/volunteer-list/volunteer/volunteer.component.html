@@ -2,7 +2,11 @@
   <div class="left-wish">
     <div class="left-volunteer">
       <div class="avatar">
-        <img src="/assets/img/{{ wish?.id }}.png" alt="avatar" />
+        <img
+          src="/assets/img/{{ wish?.id }}.png"
+          alt="avatar"
+          class="avatar-img"
+        />
       </div>
       <div class="id">{{ wish?.id }}</div>
       <div class="subs">
@@ -40,7 +44,7 @@
       <div class="status-btn">
         <div>
           <div class="circle" [id]="wish?.status.toLowerCase()">
-            <div class="status-txt">{{ wish?.status.toLowerCase() }}</div>
+            <div class="status-txt">{{ wish?.status | statusTransform }}</div>
           </div>
         </div>
       </div>

@@ -8,7 +8,40 @@
   <div class="nb-inscription">
     <span style="font-size: 40px">{{ numberWishes }}</span> inscriptions
   </div>
-  <div class="bar">bar TODO</div>
+  <div class="bar">
+    <div
+      class="application"
+      [style.width.%]="(application?.count * 100) / numberWishes"
+    >
+      <span class="tooltip-app">Candidature</span>
+    </div>
+    <div
+      class="discussion"
+      [style.width.%]="(discussion?.count * 100) / numberWishes"
+    >
+      <span class="tooltip-disc">Echange</span>
+    </div>
+    <div
+      class="waiting_association_validation"
+      [style.width.%]="
+        (waiting_association_validation?.count * 100) / numberWishes
+      "
+    >
+      <span class="tooltip-assoc">Date à valider</span>
+    </div>
+    <div
+      class="waiting_manager_validation"
+      [style.width.%]="(waiting_manager_validation?.count * 100) / numberWishes"
+    >
+      <span class="tooltip-manager">En attente du manager</span>
+    </div>
+    <div
+      class="in_progress"
+      [style.width.%]="(in_progress?.count * 100) / numberWishes"
+    >
+      <span class="tooltip-progress">En cours</span>
+    </div>
+  </div>
 
   <div class="list-subtitle">
     Suivez les inscriptions en fonction de leur statut :

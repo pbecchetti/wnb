@@ -32,6 +32,10 @@
   width: 150px;
   margin: auto;
 }
+.avatar-img {
+  height: 150px;
+  width: 150px;
+}
 .volunteer-name {
   font-size: 16px;
   font-weight: 600;
@@ -89,4 +93,33 @@
   width: 13px;
   height: 13px;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .box {
+    display: block;
+  }
+  .left-wish {
+    width: 100%;
+    border-right: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .left-wish {
+    display: block;
+  }
+  .avatar-img {
+    width: 100px;
+    height: 100px;
+  }
+  .avatar {
+    height: 100px;
+  }
+  .right-volunteer {
+    padding: 0 15px;
+  }
+  .right-wish {
+    padding: 15px;
+    width: 90%;
+  }
 }

@@ -41,3 +41,80 @@
   height: 25px;
   margin-right: 10px;
 }
+
+.bar {
+  width: 50%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--unnamed-color-ffffff);
+}
+
+.application {
+  height: 100%;
+  background-color: var(--application-color);
+  float: left;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.discussion {
+  height: 100%;
+  background-color: var(--discussion-color);
+  float: left;
+}
+.waiting_association_validation {
+  height: 100%;
+  background-color: var(--waiting-assoc-color);
+  float: left;
+}
+.waiting_manager_validation {
+  height: 100%;
+  background-color: var(--waiting-manager-color);
+  float: left;
+}
+.in_progress {
+  height: 100%;
+  background-color: var(--progress-color);
+  float: left;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.tooltip-app,
+.tooltip-disc,
+.tooltip-assoc,
+.tooltip-manager,
+.tooltip-progress {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--unnamed-color-d8d8d8);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  margin-top: 23px;
+}
+
+.application:hover .tooltip-app {
+  visibility: visible;
+}
+.discussion:hover .tooltip-disc {
+  visibility: visible;
+}
+.waiting_association_validation:hover .tooltip-assoc {
+  visibility: visible;
+}
+.waiting_manager_validation:hover .tooltip-manager {
+  visibility: visible;
+}
+.in_progress:hover .tooltip-progress {
+  visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+  .buttons {
+    display: block;
+  }
+  .list-title {
+    padding-top: 20px;
+  }
+}

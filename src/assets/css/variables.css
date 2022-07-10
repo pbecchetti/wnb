@@ -14,6 +14,8 @@
   --waiting-assoc-color: #ffc000;
   --waiting-manager-color: #ffc00080;
   --progress-color: #92d050;
+  --user-has-participated-color: #00b050;
+  --cancelled-color: #d8d8d8;
   --yellow-dark-color: #ffd400;
   --yellow-light-color: #ffd40080;
 }
