@@ -18,6 +18,9 @@ export class VolunteerListComponent implements OnInit {
   waiting_manager_validation: Stats;
   in_progress: Stats;
 
+  currentPage = 1;
+  limit = 5;
+
   constructor(private listService: ListService) {}
 
   ngOnInit(): void {
@@ -70,6 +73,7 @@ export class VolunteerListComponent implements OnInit {
   }
 
   getWishByFilter(status: string) {
+    this.currentPage = 1;
     this.listService.getWishByFilter(status).subscribe(
       (result) => {
         this.wishes = result;

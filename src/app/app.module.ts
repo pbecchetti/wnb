@@ -9,6 +9,7 @@ import { AppComponent } from "./app.component";
 import { VolunteerListComponent } from "./volunteer-list/volunteer-list.component";
 import { VolunteerComponent } from "./volunteer-list/volunteer/volunteer.component";
 import { StatusTransformPipe } from "./shared/status-transform.pipe";
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { StatusTransformPipe } from "./shared/status-transform.pipe";
     VolunteerListComponent,
     VolunteerComponent,
     StatusTransformPipe,
+    PaginationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],

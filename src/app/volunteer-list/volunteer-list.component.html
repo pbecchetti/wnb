@@ -112,7 +112,16 @@
     </div>
   </div>
   <div class="list-title">La liste de vos volontaires</div>
-  <div *ngFor="let wish of wishes">
+  <div
+    *ngFor="
+      let wish of wishes | slice: (currentPage - 1) * limit:currentPage * limit
+    "
+  >
     <app-volunteer [wish]="wish"></app-volunteer>
   </div>
+  <app-pagination
+    [(currentPage)]="currentPage"
+    [(limit)]="limit"
+    [nbItems]="wishes.length"
+  ></app-pagination>
 </div>
